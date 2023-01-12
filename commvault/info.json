@@ -1,0 +1,311 @@
+{
+  "name": "commvault",
+  "version": "1.0.0",
+  "label": "Commvault",
+  "category": "Network Security",
+  "description": "Commvault is an Intelligent Data Services platform which helps you close the business integrity gap, keeping your data available and ready for business growth.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "description": "The service-based URL to which you will connect and perform the automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Username",
+        "name": "username",
+        "description": "Username to access the Commvault server to which you will connect and perform actions.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Password",
+        "name": "password",
+        "description": "Password to access the Commvault server to which you will connect and perform actions.",
+        "type": "password",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "list_of_alerts",
+      "description": "Get list of alerts from Commvault",
+      "category": "investigation",
+      "annotation": "list_of_alerts",
+      "title": "Get alerts list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Filter params",
+          "name": "filter_params",
+          "description": "Helps in filtering the response by providing filter parameters.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "output_schema": {
+        "myReceiveTotal": "",
+        "myCreatedTotal": "",
+        "alertList": [
+          {
+            "notifType": "",
+            "description": "",
+            "createdTime": "",
+            "status": "",
+            "creator": {
+              "name": "",
+              "id": ""
+            },
+            "alertType": {
+              "name": "",
+              "id": ""
+            },
+            "alert": {
+              "name": "",
+              "id": ""
+            },
+            "alertCategory": {
+              "name": "",
+              "id": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "alert_details",
+      "description": "Get all details associated with an alert from Commvault.",
+      "category": "investigation",
+      "annotation": "alert_details",
+      "title": "Get alert details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert Id",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "alert_id",
+          "description": "Unique Id of an alert."
+        }
+      ],
+      "output_schema": {
+        "alertDetail":{
+          "alertSeverity": "",
+          "eventCriteriaXML": "",
+          "escalationSeverity": "",
+          "checkForEventParams": "",
+          "customQueryDetailsXml": "",
+          "alertTokenRuleGroupXml": "",
+          "xmlEntityList": "",
+          "periodicNotificationInterval": "",
+          "securityAssociations": {
+            "ownerAssociations": {}
+          },
+          "criteria":[
+            {
+              "reportId": "",
+              "criteriaId": "",
+              "esclationLevel": "",
+              "persistTimeSeconds": "",
+              "reportingOptions": "",
+              "delayTimeSeconds": "",
+              "value": "",
+              "taskId": ""
+            }
+          ],
+          "locale":{
+            "localeName": "",
+            "localeID": ""
+          },
+          "alert":{
+            "notifType": "",
+            "GUID": "",
+            "description": "",
+            "createdTime": "",
+            "origCCId": "",
+            "escNotifType": "",
+            "status": "",
+            "creator":{
+              "name": "",
+              "id": ""
+            },
+            "alertType":{
+              "name": "",
+              "id": ""
+            },
+            "alert":{
+              "name": "",
+              "id": ""
+            },
+            "alertCategory":{
+              "name": "",
+              "id": ""
+            }
+          },
+          "userGroupList":[
+            {
+              "id2": "",
+              "id1": "",
+              "name": ""
+            }
+          ],
+          "criteriasSelected": [],
+          "reportingParams":{
+            "persistTimeSeconds": "",
+            "reportingOptions": "",
+            "delayTimeSeconds": ""
+          },
+          "appTypeFilters": {},
+          "regularNotifications": [],
+          "notifMsgs":[
+            {
+              "notifOptions": "",
+              "notifType": "",
+              "esclationLevel": "",
+              "notifMessage": "",
+              "messageFormat": "",
+              "notifMessageHtml": "",
+              "localeId": "",
+              "saveAlertToDisk":{
+                "password": "",
+                "alertLocation": "",
+                "cvpassword": "",
+                "useNetworkShare": "",
+                "loginName": "",
+                "impersonateUser": ""
+              },
+              "feeds":{
+                "seperateIndex": "",
+                "baseLocation": "",
+                "selectedChannel": "",
+                "rssFeedLocation": ""
+              },
+              "entity":{
+                "srmReportSet": "",
+                "type": "",
+                "srmReportType": "",
+                "clientSidePackage": "",
+                "_type_": "",
+                "consumeLicense": ""
+              }
+            }
+          ],
+          "alertProperties": {}
+        }
+      }
+    },
+    {
+      "operation": "list_of_users",
+      "description": "Get list of users from Commvault.",
+      "category": "investigation",
+      "annotation": "list_of_users",
+      "title": "Get users list",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Filter params",
+          "name": "filter_params",
+          "description": "Helps in filtering the response by providing filter parameters.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        }
+      ],
+      "output_schema": {
+        "users":[
+          {
+            "removeOtherActiveSessions": "",
+            "associatedUserGroupsOperationType": "",
+            "idleTime": "",
+            "lastLogIntime": "",
+            "associatedExternalUserGroupsOperationType": "",
+            "loggedInMode": "",
+            "userEntity":{
+              "userGUID": "",
+              "userName": "",
+              "userId": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "update_user",
+      "category": "investigation",
+      "annotation": "update_user",
+      "description": "Updates the properties associated with an user.",
+      "title": "Update user details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "User Id",
+          "name": "user_id",
+          "description": "Unique Id of an user to update data for.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Payload",
+          "name": "payload",
+          "description": "Payload to update user data.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        }
+      ],
+      "output_schema": {
+        "processinginstructioninfo": {
+          "attributes": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "response":[
+          {
+            "errorString": "",
+            "errorCode": "",
+            "entity": {
+              "userId": "",
+              "userName": ""
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

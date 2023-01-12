@@ -1,0 +1,339 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "be360b65-64dc-4018-bb59-499268906846",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Commvault - 1.0.0",
+      "description": "Commvault is an Intelligent Data Services platform which helps you close the business integrity gap, keeping your data available and ready for business growth.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "Commvault",
+        "commvault"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "88f3e457-1d20-4544-88fb-929e2890f559",
+          "collection": "/api/3/workflow_collections/be360b65-64dc-4018-bb59-499268906846",
+          "triggerLimit": null,
+          "description": "Get list of alerts from Commvault",
+          "name": "Get alerts list",
+          "tag": "#Commvault",
+          "recordTags": [
+            "Commvault",
+            "commvault"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/729ff2bf-ea9f-45c3-8594-f0dbfebefb74",
+          "steps": [
+            {
+              "uuid": "729ff2bf-ea9f-45c3-8594-f0dbfebefb74",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "54098f9b-077b-4558-9531-530c44557384",
+                "title": "Commvault: Get alerts list",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "066779b5-2bd8-4381-b75a-c844e072b406",
+              "@type": "WorkflowStep",
+              "name": "Get alerts list",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Commvault",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "commvault",
+                "operation": "list_of_alerts",
+                "operationTitle": "Get alerts list",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "03d929a1-18d0-4ff0-8246-8ba7340e4e45",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get alerts list",
+              "sourceStep": "/api/3/workflow_steps/729ff2bf-ea9f-45c3-8594-f0dbfebefb74",
+              "targetStep": "/api/3/workflow_steps/066779b5-2bd8-4381-b75a-c844e072b406"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "9d159e71-6e74-420d-a25b-49e15e3a4b79",
+          "collection": "/api/3/workflow_collections/be360b65-64dc-4018-bb59-499268906846",
+          "triggerLimit": null,
+          "description": "Get all details associated with an alert from Commvault.",
+          "name": "Get alert details",
+          "tag": "#Commvault",
+          "recordTags": [
+            "Commvault",
+            "commvault"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/e9e499a3-201d-4633-bf89-281dd082df5a",
+          "steps": [
+            {
+              "uuid": "e9e499a3-201d-4633-bf89-281dd082df5a",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "757655fd-655e-4837-a00a-2bf2d8f6df62",
+                "title": "Commvault: Get alert details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "8233d0c3-d3e1-41ba-ab5d-2720e392f30d",
+              "@type": "WorkflowStep",
+              "name": "Get alert details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Commvault",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "commvault",
+                "operation": "alert_details",
+                "operationTitle": "Get alert details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9e982dce-1242-40d7-85ea-cc66f9520e7c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get alert details",
+              "sourceStep": "/api/3/workflow_steps/e9e499a3-201d-4633-bf89-281dd082df5a",
+              "targetStep": "/api/3/workflow_steps/8233d0c3-d3e1-41ba-ab5d-2720e392f30d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "8fbec6b8-e0f0-4027-9dde-a14f17eecd1b",
+          "collection": "/api/3/workflow_collections/be360b65-64dc-4018-bb59-499268906846",
+          "triggerLimit": null,
+          "description": "Get list of users from Commvault.",
+          "name": "Get users list",
+          "tag": "#Commvault",
+          "recordTags": [
+            "Commvault",
+            "commvault"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/ba4e5627-72a0-4794-86b2-cf02dc33408e",
+          "steps": [
+            {
+              "uuid": "ba4e5627-72a0-4794-86b2-cf02dc33408e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e750fbbb-1c87-455b-a376-b6aebc4fe325",
+                "title": "Commvault: Get users list",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "cd7a70e7-334c-47f5-8942-5de39452b4d6",
+              "@type": "WorkflowStep",
+              "name": "Get users list",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Commvault",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "commvault",
+                "operation": "list_of_users",
+                "operationTitle": "Get users list",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "bced33fb-2e07-4827-9ed9-f306be1bb16c",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get users list",
+              "sourceStep": "/api/3/workflow_steps/ba4e5627-72a0-4794-86b2-cf02dc33408e",
+              "targetStep": "/api/3/workflow_steps/cd7a70e7-334c-47f5-8942-5de39452b4d6"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f5449a37-e0d6-4373-9666-5d8ca90107cf",
+          "collection": "/api/3/workflow_collections/be360b65-64dc-4018-bb59-499268906846",
+          "triggerLimit": null,
+          "description": "Updates the properties associated with an user.",
+          "name": "Update user details",
+          "tag": "#Commvault",
+          "recordTags": [
+            "Commvault",
+            "commvault"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/47d3a633-0d08-430a-8475-8b951820b1ae",
+          "steps": [
+            {
+              "uuid": "47d3a633-0d08-430a-8475-8b951820b1ae",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "4ba18322-0c18-4f5f-915c-766c1545ecad",
+                "title": "Commvault: Update user details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "d703b1f8-7980-4eab-a222-60f91657f963",
+              "@type": "WorkflowStep",
+              "name": "Update user details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Commvault",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "commvault",
+                "operation": "update_user",
+                "operationTitle": "Update user details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "06e984f5-8f62-4d9d-bf09-1b42bc0ffaff",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update user details",
+              "sourceStep": "/api/3/workflow_steps/47d3a633-0d08-430a-8475-8b951820b1ae",
+              "targetStep": "/api/3/workflow_steps/d703b1f8-7980-4eab-a222-60f91657f963"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
