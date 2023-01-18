@@ -57,17 +57,18 @@
       "description": "Get list of alerts from Commvault",
       "category": "investigation",
       "annotation": "list_of_alerts",
-      "title": "Get alerts list",
+      "title": "Get Alerts List",
       "enabled": true,
       "parameters": [
         {
           "title": "Filter params",
           "name": "filter_params",
-          "description": "Helps in filtering the response by providing filter parameters.",
+          "description": "(Optional) Helps in filtering the response by providing filter parameters.",
           "type": "text",
           "visible": true,
           "editable": true,
-          "required": false
+          "required": false,
+          "placeholder": "{'param_key1': <param_value1>}"
         }
       ],
       "output_schema": {
@@ -104,7 +105,7 @@
       "description": "Get all details associated with an alert from Commvault.",
       "category": "investigation",
       "annotation": "alert_details",
-      "title": "Get alert details",
+      "title": "Get Alert Details",
       "enabled": true,
       "parameters": [
         {
@@ -228,17 +229,18 @@
       "description": "Get list of users from Commvault.",
       "category": "investigation",
       "annotation": "list_of_users",
-      "title": "Get users list",
+      "title": "Get Users List",
       "enabled": true,
       "parameters": [
         {
           "title": "Filter params",
           "name": "filter_params",
-          "description": "Helps in filtering the response by providing filter parameters.",
+          "description": "(Optional) Helps in filtering the response by providing filter parameters.",
           "type": "text",
           "visible": true,
           "editable": true,
-          "required": false
+          "required": false,
+          "placeholder": "{'param_key1': <param_value1>}"
         }
       ],
       "output_schema": {
@@ -264,7 +266,7 @@
       "category": "investigation",
       "annotation": "update_user",
       "description": "Updates the properties associated with an user.",
-      "title": "Update user details",
+      "title": "Update User Details",
       "enabled": true,
       "parameters": [
         {
@@ -283,7 +285,8 @@
           "type": "text",
           "visible": true,
           "editable": true,
-          "required": true
+          "required": true,
+          "placeholder": "{'users': [{'description': 'Modifying description', 'associatedUserGroupsOperationType': 2, 'agePasswordDays': 120, 'password': 'QnVpbGRlciExMg==', 'email': 'jdoe@company.com', 'fullName': 'Jane Doe', 'enableUser': true, 'associatedUserGroups': [{'userGroupName': 'View All'}], 'userEntity': {'userName': 'jdoe'}, 'validationParameters': {'password': 'QnVpbGRlciExMg=='}}]}"
         }
       ],
       "output_schema": {
