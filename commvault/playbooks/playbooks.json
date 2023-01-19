@@ -9,7 +9,6 @@
       "visible": true,
       "image": null,
       "recordTags": [
-        "Commvault",
         "commvault"
       ],
       "workflows": [
@@ -22,7 +21,6 @@
           "name": "Get Alerts List",
           "tag": "#Commvault",
           "recordTags": [
-            "Commvault",
             "commvault"
           ],
           "isActive": false,
@@ -106,7 +104,6 @@
           "name": "Get Alert Details",
           "tag": "#Commvault",
           "recordTags": [
-            "Commvault",
             "commvault"
           ],
           "isActive": false,
@@ -186,7 +183,6 @@
           "name": "Get Users List",
           "tag": "#Commvault",
           "recordTags": [
-            "Commvault",
             "commvault"
           ],
           "isActive": false,
@@ -270,7 +266,6 @@
           "name": "Update User Details",
           "tag": "#Commvault",
           "recordTags": [
-            "Commvault",
             "commvault"
           ],
           "isActive": false,
