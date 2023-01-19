@@ -64,11 +64,11 @@
           "title": "Filter params",
           "name": "filter_params",
           "description": "(Optional) Helps in filtering the response by providing filter parameters.",
-          "type": "text",
+          "type": "json",
           "visible": true,
           "editable": true,
           "required": false,
-          "placeholder": "{'param_key1': <param_value1>}"
+          "value": {"name": "any name"}
         }
       ],
       "output_schema": {
@@ -119,7 +119,7 @@
         }
       ],
       "output_schema": {
-        "alertDetail":{
+        "alertDetail": {
           "alertSeverity": "",
           "eventCriteriaXML": "",
           "escalationSeverity": "",
@@ -131,7 +131,7 @@
           "securityAssociations": {
             "ownerAssociations": {}
           },
-          "criteria":[
+          "criteria": [
             {
               "reportId": "",
               "criteriaId": "",
@@ -143,11 +143,11 @@
               "taskId": ""
             }
           ],
-          "locale":{
+          "locale": {
             "localeName": "",
             "localeID": ""
           },
-          "alert":{
+          "alert": {
             "notifType": "",
             "GUID": "",
             "description": "",
@@ -155,24 +155,24 @@
             "origCCId": "",
             "escNotifType": "",
             "status": "",
-            "creator":{
+            "creator": {
               "name": "",
               "id": ""
             },
-            "alertType":{
+            "alertType": {
               "name": "",
               "id": ""
             },
-            "alert":{
+            "alert": {
               "name": "",
               "id": ""
             },
-            "alertCategory":{
+            "alertCategory": {
               "name": "",
               "id": ""
             }
           },
-          "userGroupList":[
+          "userGroupList": [
             {
               "id2": "",
               "id1": "",
@@ -180,14 +180,14 @@
             }
           ],
           "criteriasSelected": [],
-          "reportingParams":{
+          "reportingParams": {
             "persistTimeSeconds": "",
             "reportingOptions": "",
             "delayTimeSeconds": ""
           },
           "appTypeFilters": {},
           "regularNotifications": [],
-          "notifMsgs":[
+          "notifMsgs": [
             {
               "notifOptions": "",
               "notifType": "",
@@ -196,7 +196,7 @@
               "messageFormat": "",
               "notifMessageHtml": "",
               "localeId": "",
-              "saveAlertToDisk":{
+              "saveAlertToDisk": {
                 "password": "",
                 "alertLocation": "",
                 "cvpassword": "",
@@ -204,13 +204,13 @@
                 "loginName": "",
                 "impersonateUser": ""
               },
-              "feeds":{
+              "feeds": {
                 "seperateIndex": "",
                 "baseLocation": "",
                 "selectedChannel": "",
                 "rssFeedLocation": ""
               },
-              "entity":{
+              "entity": {
                 "srmReportSet": "",
                 "type": "",
                 "srmReportType": "",
@@ -236,15 +236,15 @@
           "title": "Filter params",
           "name": "filter_params",
           "description": "(Optional) Helps in filtering the response by providing filter parameters.",
-          "type": "text",
+          "type": "json",
           "visible": true,
           "editable": true,
           "required": false,
-          "placeholder": "{'param_key1': <param_value1>}"
+          "value": {"level": 1}
         }
       ],
       "output_schema": {
-        "users":[
+        "users": [
           {
             "removeOtherActiveSessions": "",
             "associatedUserGroupsOperationType": "",
@@ -252,7 +252,7 @@
             "lastLogIntime": "",
             "associatedExternalUserGroupsOperationType": "",
             "loggedInMode": "",
-            "userEntity":{
+            "userEntity": {
               "userGUID": "",
               "userName": "",
               "userId": ""
@@ -282,11 +282,34 @@
           "title": "Payload",
           "name": "payload",
           "description": "Payload to update user data.",
-          "type": "text",
+          "type": "json",
           "visible": true,
           "editable": true,
           "required": true,
-          "placeholder": "{'users': [{'description': 'Modifying description', 'associatedUserGroupsOperationType': 2, 'agePasswordDays': 120, 'password': 'QnVpbGRlciExMg==', 'email': 'jdoe@company.com', 'fullName': 'Jane Doe', 'enableUser': true, 'associatedUserGroups': [{'userGroupName': 'View All'}], 'userEntity': {'userName': 'jdoe'}, 'validationParameters': {'password': 'QnVpbGRlciExMg=='}}]}"
+          "value": {
+            "users": [
+              {
+                "description": "Modifying description",
+                "associatedUserGroupsOperationType": 2,
+                "agePasswordDays": 120,
+                "password": "QnVpbGRlciExMg==",
+                "email": "jdoe@company.com",
+                "fullName": "Jane Doe",
+                "enableUser": true,
+                "associatedUserGroups": [
+                  {
+                    "userGroupName": "View All"
+                  }
+                ],
+                "userEntity": {
+                  "userName": "jdoe"
+                },
+                "validationParameters": {
+                  "password": "QnVpbGRlciExMg=="
+                }
+              }
+            ]
+          }
         }
       ],
       "output_schema": {
@@ -298,7 +321,7 @@
             }
           ]
         },
-        "response":[
+        "response": [
           {
             "errorString": "",
             "errorCode": "",
