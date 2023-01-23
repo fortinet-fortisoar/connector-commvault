@@ -277,7 +277,7 @@
         {
           "title": "Description",
           "name": "description",
-          "description": "A general description of the user account.",
+          "description": "A general description of the user account which needs to be updated.",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -295,7 +295,7 @@
         {
           "title": "Age Password Days",
           "name": "agePasswordDays",
-          "description": "The number of days to keep the password active.",
+          "description": "Specify the number of days to keep the password active.",
           "type": "integer",
           "visible": true,
           "editable": true,
@@ -304,7 +304,7 @@
         {
           "title": "Password",
           "name": "password",
-          "description": "The password of the user to access the user account.",
+          "description": "Specify updated password of the user to access the user account.",
           "type": "password",
           "visible": true,
           "editable": true,
@@ -313,7 +313,7 @@
         {
           "title": "Email",
           "name": "email",
-          "description": "The email address of the user.",
+          "description": "The email address of the user which needs to be updated.",
           "type": "email",
           "visible": true,
           "editable": true,
@@ -322,7 +322,7 @@
         {
           "title": "Full Name",
           "name": "fullName",
-          "description": "The full name of the user.",
+          "description": "The full name of the user which needs to be updated.",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -331,11 +331,13 @@
         {
           "title": "Enable User",
           "name": "enableUser",
-          "description": "The option to enable/disable the user.",
+          "description": "Specify whether to enable/disable the user. By default the user is active.",
           "type": "checkbox",
           "visible": true,
           "editable": true,
-          "required": false
+          "required": false,
+          "value": true,
+          "tooltip": "The option to enable/disable the user."
         },
         {
           "title": "User Group Names",
@@ -350,7 +352,7 @@
         {
           "title": "Username",
           "name": "userName",
-          "description": "The name of the user.",
+          "description": "Specify the name of the user which needs to be updated.",
           "type": "text",
           "visible": true,
           "editable": true,
