@@ -16,3 +16,21 @@ class Endpoint:
     LOGIN = "/Login"
     ALERT_RULE = "/AlertRule"
     USER = "/User"
+
+
+USER_PARAMS = (
+    "level",
+)
+
+
+QUERY_PARAMS = (
+    "description",
+    "associatedUserGroupsOperationType",
+    "agePasswordDays",
+    "password",
+    "email",
+    "fullName",
+    "enableUser",
+    "userGroupNames",
+    "userName",
+)

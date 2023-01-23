@@ -110,9 +110,32 @@ def check_health_ex(config, connector_info):
         raise ConnectorError(str(err))
 
 
+def get_payload_data(input_params):
+    data = dict()
+    for param_key in QUERY_PARAMS:
+        param_value = input_params.get(param_key)
+        if param_value:
+            if param_key == "password":
+                pwd = bytes(param_value, encoding='utf8')
+                pwd = str(base64.b64encode(pwd), encoding='utf-8')
+                data.update({"password": pwd, "validationParameters": {"password": pwd}})
+            elif param_key == "userGroupNames":
+                li = param_value.split(",")
+                group_names = list()
+                for group_name in li:
+                    group_names.append({"userGroupName": group_name})
+                data.update({"associatedUserGroups": group_names})
+            elif param_key == "userName":
+                data.update({"userEntity": {"userName": param_value}})
+            else:
+                data.update({param_key: param_value})
+    payload_data = {"users": [data]}
+    return payload_data
+
+
 def list_of_alerts(config, params, connector_info):
     ob = Commvault(config, connector_info)
-    return ob.api_request(Method.GET, Endpoint.ALERT_RULE, params=params.get("filter_params", {}))
+    return ob.api_request(Method.GET, Endpoint.ALERT_RULE)
 
 
 def alert_details(config, params, connector_info):
@@ -122,12 +145,15 @@ def alert_details(config, params, connector_info):
 
 def list_of_users(config, params, connector_info):
     ob = Commvault(config, connector_info)
-    return ob.api_request(Method.GET, Endpoint.USER, params=params.get("filter_params", {}))
+    filter_params = dict()
+    level = params.get("level")
+    level and filter_params.update({"level": level})
+    return ob.api_request(Method.GET, Endpoint.USER, params=filter_params)
 
 
 def update_user(config, params, connector_info):
     ob = Commvault(config, connector_info)
-    return ob.api_request(Method.POST, Endpoint.USER + f"/{params.pop('user_id', '')}", data=params.get("payload", {}))
+    return ob.api_request(Method.POST, Endpoint.USER + f"/{params.pop('user_id', '')}", data=get_payload_data(params))
 
 
 operations = {

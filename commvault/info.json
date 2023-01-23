@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "label": "Commvault",
   "category": "Network Security",
-  "description": "Commvault is an Intelligent Data Services platform which helps you close the business integrity gap, keeping your data available and ready for business growth.",
+  "description": "Commvault is an Intelligent Data Services platform which helps you close the business integrity gap, keeping your data available and ready for business growth. This connector facilitates operations to get alerts, get and update the user details.",
   "publisher": "Fortinet",
   "cs_approved": false,
   "cs_compatible": true,
@@ -54,23 +54,12 @@
   "operations": [
     {
       "operation": "list_of_alerts",
-      "description": "Get list of alerts from Commvault",
+      "description": "Retrieves a detailed list of alerts from the Commvault server.",
       "category": "investigation",
       "annotation": "list_of_alerts",
       "title": "Get Alerts List",
       "enabled": true,
-      "parameters": [
-        {
-          "title": "Filter params",
-          "name": "filter_params",
-          "description": "(Optional) Helps in filtering the response by providing filter parameters.",
-          "type": "json",
-          "visible": true,
-          "editable": true,
-          "required": false,
-          "value": {"name": "any name"}
-        }
-      ],
+      "parameters": [],
       "output_schema": {
         "myReceiveTotal": "",
         "myCreatedTotal": "",
@@ -102,20 +91,20 @@
     },
     {
       "operation": "alert_details",
-      "description": "Get all details associated with an alert from Commvault.",
+      "description": "Retrieves details about a specific alert from Commvault based on the alert ID that you have specified.",
       "category": "investigation",
       "annotation": "alert_details",
       "title": "Get Alert Details",
       "enabled": true,
       "parameters": [
         {
-          "title": "Alert Id",
+          "title": "Alert ID",
           "required": true,
           "editable": true,
           "visible": true,
           "type": "text",
           "name": "alert_id",
-          "description": "Unique Id of an alert."
+          "description": "The ID of the alert whose details you want to retrieve from Commvault"
         }
       ],
       "output_schema": {
@@ -226,21 +215,28 @@
     },
     {
       "operation": "list_of_users",
-      "description": "Get list of users from Commvault.",
+      "description": "Retrieves a detailed list of users from the Armis server based on filters like Alert ID",
       "category": "investigation",
       "annotation": "list_of_users",
       "title": "Get Users List",
       "enabled": true,
       "parameters": [
         {
-          "title": "Filter params",
-          "name": "filter_params",
-          "description": "(Optional) Helps in filtering the response by providing filter parameters.",
-          "type": "json",
-          "visible": true,
-          "editable": true,
+          "title": "Level",
+          "name": "level",
+          "type": "select",
+          "options": [
+            10,
+            30,
+            40,
+            50
+          ],
+          "tooltip": "Select the level to control the user properties included in the response based on your selection.",
+          "description": "(Optional) Select the level to control the user properties included in the response based on your selection from the following options: \n10 - User properties such as the description and email address. \n30 - Additional user properties such as quota information. \n40 - associated internal and external user groups, security associations, and the user properties returned by level 30. \n50 - users who can manage the user and the information returned by level 40",
           "required": false,
-          "value": {"level": 1}
+          "editable": true,
+          "visible": true,
+          "value": ""
         }
       ],
       "output_schema": {
@@ -265,27 +261,102 @@
       "operation": "update_user",
       "category": "investigation",
       "annotation": "update_user",
-      "description": "Updates the properties associated with an user.",
+      "description": "Updates the properties of a specific user on the Commvault server based on the user ID that you have specified.",
       "title": "Update User Details",
       "enabled": true,
       "parameters": [
         {
-          "title": "User Id",
+          "title": "User ID",
           "name": "user_id",
-          "description": "Unique Id of an user to update data for.",
+          "description": "The ID of the user whose details you want to update.",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true
         },
         {
-          "title": "Payload",
-          "name": "payload",
-          "description": "Payload to update user data.",
-          "type": "json",
+          "title": "Description",
+          "name": "description",
+          "description": "A general description of the user account.",
+          "type": "text",
           "visible": true,
           "editable": true,
-          "required": true,
+          "required": false
+        },
+        {
+          "title": "Associated User Groups Operation Type",
+          "name": "associatedUserGroupsOperationType",
+          "description": "The operation to perform on the user group in the user group name element.",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Age Password Days",
+          "name": "agePasswordDays",
+          "description": "The number of days to keep the password active.",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Password",
+          "name": "password",
+          "description": "The password of the user to access the user account.",
+          "type": "password",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Email",
+          "name": "email",
+          "description": "The email address of the user.",
+          "type": "email",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Full Name",
+          "name": "fullName",
+          "description": "The full name of the user.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Enable User",
+          "name": "enableUser",
+          "description": "The option to enable/disable the user.",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "User Group Names",
+          "name": "userGroupNames",
+          "tooltip": "Please provide comma separated user group names",
+          "description": "The name of the user group operated on by the associated user groups operation type element.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Username",
+          "name": "userName",
+          "description": "The name of the user.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
           "value": {
             "users": [
               {
