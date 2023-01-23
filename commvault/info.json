@@ -1,0 +1,408 @@
+{
+  "name": "commvault",
+  "version": "1.0.0",
+  "label": "Commvault",
+  "category": "Network Security",
+  "description": "Commvault is an Intelligent Data Services platform which helps you close the business integrity gap, keeping your data available and ready for business growth. This connector facilitates operations to get alerts, get and update the user details.",
+  "publisher": "Fortinet",
+  "cs_approved": false,
+  "cs_compatible": true,
+  "help_online": "",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "name": "server_url",
+        "description": "The service-based URL to which you will connect and perform the automated operations.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Username",
+        "name": "username",
+        "description": "Username to access the Commvault server to which you will connect and perform actions.",
+        "type": "text",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Password",
+        "name": "password",
+        "description": "Password to access the Commvault server to which you will connect and perform actions.",
+        "type": "password",
+        "visible": true,
+        "editable": true,
+        "required": true
+      },
+      {
+        "title": "Verify SSL",
+        "name": "verify_ssl",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. By default, this option is set as True.",
+        "type": "checkbox",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "list_of_alerts",
+      "description": "Retrieves a detailed list of alerts from the Commvault server.",
+      "category": "investigation",
+      "annotation": "list_of_alerts",
+      "title": "Get Alerts List",
+      "enabled": true,
+      "parameters": [],
+      "output_schema": {
+        "myReceiveTotal": "",
+        "myCreatedTotal": "",
+        "alertList": [
+          {
+            "notifType": "",
+            "description": "",
+            "createdTime": "",
+            "status": "",
+            "creator": {
+              "name": "",
+              "id": ""
+            },
+            "alertType": {
+              "name": "",
+              "id": ""
+            },
+            "alert": {
+              "name": "",
+              "id": ""
+            },
+            "alertCategory": {
+              "name": "",
+              "id": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "alert_details",
+      "description": "Retrieves details about a specific alert from Commvault based on the alert ID that you have specified.",
+      "category": "investigation",
+      "annotation": "alert_details",
+      "title": "Get Alert Details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Alert ID",
+          "required": true,
+          "editable": true,
+          "visible": true,
+          "type": "text",
+          "name": "alert_id",
+          "description": "The ID of the alert whose details you want to retrieve from Commvault"
+        }
+      ],
+      "output_schema": {
+        "alertDetail": {
+          "alertSeverity": "",
+          "eventCriteriaXML": "",
+          "escalationSeverity": "",
+          "checkForEventParams": "",
+          "customQueryDetailsXml": "",
+          "alertTokenRuleGroupXml": "",
+          "xmlEntityList": "",
+          "periodicNotificationInterval": "",
+          "securityAssociations": {
+            "ownerAssociations": {}
+          },
+          "criteria": [
+            {
+              "reportId": "",
+              "criteriaId": "",
+              "esclationLevel": "",
+              "persistTimeSeconds": "",
+              "reportingOptions": "",
+              "delayTimeSeconds": "",
+              "value": "",
+              "taskId": ""
+            }
+          ],
+          "locale": {
+            "localeName": "",
+            "localeID": ""
+          },
+          "alert": {
+            "notifType": "",
+            "GUID": "",
+            "description": "",
+            "createdTime": "",
+            "origCCId": "",
+            "escNotifType": "",
+            "status": "",
+            "creator": {
+              "name": "",
+              "id": ""
+            },
+            "alertType": {
+              "name": "",
+              "id": ""
+            },
+            "alert": {
+              "name": "",
+              "id": ""
+            },
+            "alertCategory": {
+              "name": "",
+              "id": ""
+            }
+          },
+          "userGroupList": [
+            {
+              "id2": "",
+              "id1": "",
+              "name": ""
+            }
+          ],
+          "criteriasSelected": [],
+          "reportingParams": {
+            "persistTimeSeconds": "",
+            "reportingOptions": "",
+            "delayTimeSeconds": ""
+          },
+          "appTypeFilters": {},
+          "regularNotifications": [],
+          "notifMsgs": [
+            {
+              "notifOptions": "",
+              "notifType": "",
+              "esclationLevel": "",
+              "notifMessage": "",
+              "messageFormat": "",
+              "notifMessageHtml": "",
+              "localeId": "",
+              "saveAlertToDisk": {
+                "password": "",
+                "alertLocation": "",
+                "cvpassword": "",
+                "useNetworkShare": "",
+                "loginName": "",
+                "impersonateUser": ""
+              },
+              "feeds": {
+                "seperateIndex": "",
+                "baseLocation": "",
+                "selectedChannel": "",
+                "rssFeedLocation": ""
+              },
+              "entity": {
+                "srmReportSet": "",
+                "type": "",
+                "srmReportType": "",
+                "clientSidePackage": "",
+                "_type_": "",
+                "consumeLicense": ""
+              }
+            }
+          ],
+          "alertProperties": {}
+        }
+      }
+    },
+    {
+      "operation": "list_of_users",
+      "description": "Retrieves a detailed list of users from the Armis server based on filters like Alert ID",
+      "category": "investigation",
+      "annotation": "list_of_users",
+      "title": "Get Users List",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Level",
+          "name": "level",
+          "type": "select",
+          "options": [
+            10,
+            30,
+            40,
+            50
+          ],
+          "tooltip": "Select the level to control the user properties included in the response based on your selection.",
+          "description": "(Optional) Select the level to control the user properties included in the response based on your selection from the following options: \n10 - User properties such as the description and email address. \n30 - Additional user properties such as quota information. \n40 - associated internal and external user groups, security associations, and the user properties returned by level 30. \n50 - users who can manage the user and the information returned by level 40",
+          "required": false,
+          "editable": true,
+          "visible": true,
+          "value": ""
+        }
+      ],
+      "output_schema": {
+        "users": [
+          {
+            "removeOtherActiveSessions": "",
+            "associatedUserGroupsOperationType": "",
+            "idleTime": "",
+            "lastLogIntime": "",
+            "associatedExternalUserGroupsOperationType": "",
+            "loggedInMode": "",
+            "userEntity": {
+              "userGUID": "",
+              "userName": "",
+              "userId": ""
+            }
+          }
+        ]
+      }
+    },
+    {
+      "operation": "update_user",
+      "category": "investigation",
+      "annotation": "update_user",
+      "description": "Updates the properties of a specific user on the Commvault server based on the user ID that you have specified.",
+      "title": "Update User Details",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "User ID",
+          "name": "user_id",
+          "description": "The ID of the user whose details you want to update.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "description": "A general description of the user account.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Associated User Groups Operation Type",
+          "name": "associatedUserGroupsOperationType",
+          "description": "The operation to perform on the user group in the user group name element.",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Age Password Days",
+          "name": "agePasswordDays",
+          "description": "The number of days to keep the password active.",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Password",
+          "name": "password",
+          "description": "The password of the user to access the user account.",
+          "type": "password",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Email",
+          "name": "email",
+          "description": "The email address of the user.",
+          "type": "email",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Full Name",
+          "name": "fullName",
+          "description": "The full name of the user.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Enable User",
+          "name": "enableUser",
+          "description": "The option to enable/disable the user.",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "User Group Names",
+          "name": "userGroupNames",
+          "tooltip": "Please provide comma separated user group names",
+          "description": "The name of the user group operated on by the associated user groups operation type element.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "title": "Username",
+          "name": "userName",
+          "description": "The name of the user.",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false
+        },
+        {
+          "value": {
+            "users": [
+              {
+                "description": "Modifying description",
+                "associatedUserGroupsOperationType": 2,
+                "agePasswordDays": 120,
+                "password": "QnVpbGRlciExMg==",
+                "email": "jdoe@company.com",
+                "fullName": "Jane Doe",
+                "enableUser": true,
+                "associatedUserGroups": [
+                  {
+                    "userGroupName": "View All"
+                  }
+                ],
+                "userEntity": {
+                  "userName": "jdoe"
+                },
+                "validationParameters": {
+                  "password": "QnVpbGRlciExMg=="
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "output_schema": {
+        "processinginstructioninfo": {
+          "attributes": [
+            {
+              "name": "",
+              "value": ""
+            }
+          ]
+        },
+        "response": [
+          {
+            "errorString": "",
+            "errorCode": "",
+            "entity": {
+              "userId": "",
+              "userName": ""
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
