@@ -355,32 +355,6 @@
           "visible": true,
           "editable": true,
           "required": false
-        },
-        {
-          "value": {
-            "users": [
-              {
-                "description": "Modifying description",
-                "associatedUserGroupsOperationType": 2,
-                "agePasswordDays": 120,
-                "password": "QnVpbGRlciExMg==",
-                "email": "jdoe@company.com",
-                "fullName": "Jane Doe",
-                "enableUser": true,
-                "associatedUserGroups": [
-                  {
-                    "userGroupName": "View All"
-                  }
-                ],
-                "userEntity": {
-                  "userName": "jdoe"
-                },
-                "validationParameters": {
-                  "password": "QnVpbGRlciExMg=="
-                }
-              }
-            ]
-          }
         }
       ],
       "output_schema": {
