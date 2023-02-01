@@ -104,7 +104,7 @@
           "visible": true,
           "type": "text",
           "name": "alert_id",
-          "description": "The ID of the alert whose details you want to retrieve from Commvault"
+          "description": "Specify the ID of the alert whose details you want to retrieve from Commvault"
         }
       ],
       "output_schema": {
@@ -215,7 +215,7 @@
     },
     {
       "operation": "list_of_users",
-      "description": "Retrieves a detailed list of users from the Armis server based on filters like Alert ID",
+      "description": "Retrieves a detailed list of users from the Commvault server based on filters like Alert ID",
       "category": "investigation",
       "annotation": "list_of_users",
       "title": "Get Users List",
@@ -231,8 +231,8 @@
             40,
             50
           ],
-          "tooltip": "Select the level to control the user properties included in the response based on your selection.",
-          "description": "(Optional) Select the level to control the user properties included in the response based on your selection from the following options: \n10 - User properties such as the description and email address. \n30 - Additional user properties such as quota information. \n40 - associated internal and external user groups, security associations, and the user properties returned by level 30. \n50 - users who can manage the user and the information returned by level 40",
+          "tooltip": "Select a level to control the user properties included in the response based on your selection.",
+          "description": "(Optional) Select a level to control the user properties included in the response based on your selection from the following options: \n10: Select this option to fetch user properties such as the description and email address. \n30: Select this option to fetch additional user properties such as quota information. \n40: Select this option to fetch associated internal and external user groups, and security associations, in addition to the user properties returned by level 30. \n50: Select this option to fetch users who can manage other users in addition to the information returned by level 40.",
           "required": false,
           "editable": true,
           "visible": true,
@@ -268,7 +268,7 @@
         {
           "title": "User ID",
           "name": "user_id",
-          "description": "The ID of the user whose details you want to update.",
+          "description": "Specify the ID of the user whose details you want to update.",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -277,7 +277,7 @@
         {
           "title": "Description",
           "name": "description",
-          "description": "A general description of the user account which needs to be updated.",
+          "description": "(Optional) Specify a general description of the user account which needs to be updated.",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -286,7 +286,7 @@
         {
           "title": "Associated User Groups Operation Type",
           "name": "associatedUserGroupsOperationType",
-          "description": "The operation to perform on the user group in the user group name element.",
+          "description": "(Optional) Specify the operation to perform on the user group in the user group name element.",
           "type": "integer",
           "visible": true,
           "editable": true,
@@ -295,7 +295,7 @@
         {
           "title": "Age Password Days",
           "name": "agePasswordDays",
-          "description": "Specify the number of days to keep the password active.",
+          "description": "(Optional) Specify the number of days to keep the password active.",
           "type": "integer",
           "visible": true,
           "editable": true,
@@ -304,7 +304,7 @@
         {
           "title": "Password",
           "name": "password",
-          "description": "Specify updated password of the user to access the user account.",
+          "description": "(Optional) Specify the updated password of the user to access the user account.",
           "type": "password",
           "visible": true,
           "editable": true,
@@ -313,7 +313,7 @@
         {
           "title": "Email",
           "name": "email",
-          "description": "The email address of the user which needs to be updated.",
+          "description": "(Optional) Specify the email address of the user which needs to be updated.",
           "type": "email",
           "visible": true,
           "editable": true,
@@ -322,7 +322,7 @@
         {
           "title": "Full Name",
           "name": "fullName",
-          "description": "The full name of the user which needs to be updated.",
+          "description": "(Optional) Specify the full name of the user whose details need to be updated.",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -331,7 +331,7 @@
         {
           "title": "Enable User",
           "name": "enableUser",
-          "description": "Specify whether to enable/disable the user. By default the user is active.",
+          "description": "(Optional) Select the checkbox to enable the user. By default the user is active and the checkbox is selected.",
           "type": "checkbox",
           "visible": true,
           "editable": true,
@@ -342,8 +342,8 @@
         {
           "title": "User Group Names",
           "name": "userGroupNames",
-          "tooltip": "Please provide comma separated user group names",
-          "description": "The name of the user group operated on by the associated user groups operation type element.",
+          "tooltip": "Please provide comma separated user group names.",
+          "description": "(Optional) Specify the name of the user group operated on by the associated user groups operation type element.",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -352,7 +352,7 @@
         {
           "title": "Username",
           "name": "userName",
-          "description": "Specify the name of the user which needs to be updated.",
+          "description": "(Optional) Specify the name of the user whose details need to be updated.",
           "type": "text",
           "visible": true,
           "editable": true,
