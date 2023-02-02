@@ -2,7 +2,7 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "693f4b49-6a8f-461b-975e-3fd8e0c10fd1",
+      "uuid": "1ca2d9f1-70b9-4007-92db-bbe59566cd9d",
       "@type": "WorkflowCollection",
       "name": "Sample - Commvault - 1.0.0",
       "description": "Commvault is an Intelligent Data Services platform which helps you close the business integrity gap, keeping your data available and ready for business growth. This connector facilitates operations to get alerts, get and update the user details.",
@@ -14,8 +14,8 @@
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "cba55bf9-63d8-4a8e-9459-02f60fe87817",
-          "collection": "/api/3/workflow_collections/693f4b49-6a8f-461b-975e-3fd8e0c10fd1",
+          "uuid": "156caa55-183c-4d17-ba44-4f391fcb946a",
+          "collection": "/api/3/workflow_collections/1ca2d9f1-70b9-4007-92db-bbe59566cd9d",
           "triggerLimit": null,
           "description": "Retrieves a detailed list of alerts from the Commvault server.",
           "name": "Get Alerts List",
@@ -28,16 +28,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/5737f98c-61a6-4145-8d8f-5454bef19b14",
+          "triggerStep": "/api/3/workflow_steps/e05b5674-ff74-4e7a-9fad-afb6a54c299a",
           "steps": [
             {
-              "uuid": "5737f98c-61a6-4145-8d8f-5454bef19b14",
+              "uuid": "e05b5674-ff74-4e7a-9fad-afb6a54c299a",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "95de48bf-1134-4b6f-bfbc-41dbf4020ce0",
+                "route": "f38763d9-be07-4ad5-b234-607636784193",
                 "title": "Commvault: Get Alerts List",
                 "resources": [
                   "alerts"
@@ -57,7 +57,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "8728142d-e63c-4504-9afa-446c77429b39",
+              "uuid": "97eae9ca-4379-45ae-a03c-4034118156d0",
               "@type": "WorkflowStep",
               "name": "Get Alerts List",
               "description": null,
@@ -82,19 +82,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "21f33ea7-d966-4ea6-a642-1f13014668f2",
+              "uuid": "71bfcc89-e415-46ac-b705-4fce18d420b8",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Alerts List",
-              "sourceStep": "/api/3/workflow_steps/5737f98c-61a6-4145-8d8f-5454bef19b14",
-              "targetStep": "/api/3/workflow_steps/8728142d-e63c-4504-9afa-446c77429b39"
+              "sourceStep": "/api/3/workflow_steps/e05b5674-ff74-4e7a-9fad-afb6a54c299a",
+              "targetStep": "/api/3/workflow_steps/97eae9ca-4379-45ae-a03c-4034118156d0"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "c51e09ea-ee9f-4ab1-904f-961cfba6e8e5",
-          "collection": "/api/3/workflow_collections/693f4b49-6a8f-461b-975e-3fd8e0c10fd1",
+          "uuid": "49d2f471-a4a2-44aa-9395-76185a8e973f",
+          "collection": "/api/3/workflow_collections/1ca2d9f1-70b9-4007-92db-bbe59566cd9d",
           "triggerLimit": null,
           "description": "Retrieves details about a specific alert from Commvault based on the alert ID that you have specified.",
           "name": "Get Alert Details",
@@ -107,16 +107,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/77cab68f-73e3-46aa-a4c2-7b1b7700fdc5",
+          "triggerStep": "/api/3/workflow_steps/e7316336-a489-4a6d-a20f-d2250364877b",
           "steps": [
             {
-              "uuid": "77cab68f-73e3-46aa-a4c2-7b1b7700fdc5",
+              "uuid": "e7316336-a489-4a6d-a20f-d2250364877b",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "0a951c87-d684-4138-8c79-081b041bb263",
+                "route": "50c24bcc-f4f6-4fee-8dcd-a8c94c86b217",
                 "title": "Commvault: Get Alert Details",
                 "resources": [
                   "alerts"
@@ -136,7 +136,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "00683a64-86c0-4f50-900b-de64e78484f4",
+              "uuid": "70144966-8dbb-4993-8713-6b973afbbed4",
               "@type": "WorkflowStep",
               "name": "Get Alert Details",
               "description": null,
@@ -161,21 +161,21 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "2ae48489-bb19-434c-9973-aaff0b07d54e",
+              "uuid": "6e1c26df-91ae-419e-b66e-5b4b9c9cbe07",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Alert Details",
-              "sourceStep": "/api/3/workflow_steps/77cab68f-73e3-46aa-a4c2-7b1b7700fdc5",
-              "targetStep": "/api/3/workflow_steps/00683a64-86c0-4f50-900b-de64e78484f4"
+              "sourceStep": "/api/3/workflow_steps/e7316336-a489-4a6d-a20f-d2250364877b",
+              "targetStep": "/api/3/workflow_steps/70144966-8dbb-4993-8713-6b973afbbed4"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "0977a99d-279d-4ee5-8f84-73108673cf5a",
-          "collection": "/api/3/workflow_collections/693f4b49-6a8f-461b-975e-3fd8e0c10fd1",
+          "uuid": "be3ef785-39e8-4e86-9c1d-413d198990c4",
+          "collection": "/api/3/workflow_collections/1ca2d9f1-70b9-4007-92db-bbe59566cd9d",
           "triggerLimit": null,
-          "description": "Retrieves a detailed list of users from the Armis server based on filters like Alert ID",
+          "description": "Retrieves a detailed list of users from the Commvault server based on filters like Alert ID",
           "name": "Get Users List",
           "tag": "#Commvault",
           "recordTags": [
@@ -186,16 +186,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/d10f8aa2-97df-4284-9d12-a47b486ab680",
+          "triggerStep": "/api/3/workflow_steps/a7fc12cd-58ea-473e-bbc7-596e50132de8",
           "steps": [
             {
-              "uuid": "d10f8aa2-97df-4284-9d12-a47b486ab680",
+              "uuid": "a7fc12cd-58ea-473e-bbc7-596e50132de8",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "fe2c570d-5fc0-4efa-9438-469e24a8392c",
+                "route": "fe03f563-0b5f-4581-b119-f51cf659b326",
                 "title": "Commvault: Get Users List",
                 "resources": [
                   "alerts"
@@ -215,7 +215,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "26cf0d11-032a-4d57-a60d-121e92b44365",
+              "uuid": "95ca3f37-7a10-4219-9d4e-98c50b82aaf0",
               "@type": "WorkflowStep",
               "name": "Get Users List",
               "description": null,
@@ -242,19 +242,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a4d72966-d132-4766-a34e-b67f6173f0e0",
+              "uuid": "b68d2dda-8bc0-4a67-87b4-49968b6e4c11",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Users List",
-              "sourceStep": "/api/3/workflow_steps/d10f8aa2-97df-4284-9d12-a47b486ab680",
-              "targetStep": "/api/3/workflow_steps/26cf0d11-032a-4d57-a60d-121e92b44365"
+              "sourceStep": "/api/3/workflow_steps/a7fc12cd-58ea-473e-bbc7-596e50132de8",
+              "targetStep": "/api/3/workflow_steps/95ca3f37-7a10-4219-9d4e-98c50b82aaf0"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "28277e2c-e8c8-4121-8443-fd029bd25aa3",
-          "collection": "/api/3/workflow_collections/693f4b49-6a8f-461b-975e-3fd8e0c10fd1",
+          "uuid": "e8cd3177-e484-437b-9ad8-c5074c2cad88",
+          "collection": "/api/3/workflow_collections/1ca2d9f1-70b9-4007-92db-bbe59566cd9d",
           "triggerLimit": null,
           "description": "Updates the properties of a specific user on the Commvault server based on the user ID that you have specified.",
           "name": "Update User Details",
@@ -267,16 +267,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/28eb7c2b-4f21-4f04-9677-efec4440770f",
+          "triggerStep": "/api/3/workflow_steps/f37a5d8f-634f-4792-b350-dce7730b3b7d",
           "steps": [
             {
-              "uuid": "28eb7c2b-4f21-4f04-9677-efec4440770f",
+              "uuid": "f37a5d8f-634f-4792-b350-dce7730b3b7d",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "1d37e4b6-2449-4080-9971-5ad2f4e1daca",
+                "route": "7f91d1ea-ec11-4972-a004-f4ba4a5cbf2a",
                 "title": "Commvault: Update User Details",
                 "resources": [
                   "alerts"
@@ -296,7 +296,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "eafc182f-4ee8-41ff-8f56-142d493ae077",
+              "uuid": "8488bc8e-b3a8-4ee6-86b1-2d589df24533",
               "@type": "WorkflowStep",
               "name": "Update User Details",
               "description": null,
@@ -304,7 +304,9 @@
               "arguments": {
                 "name": "Commvault",
                 "config": "''",
-                "params": [],
+                "params": {
+                  "enableUser": true
+                },
                 "version": "1.0.0",
                 "connector": "commvault",
                 "operation": "update_user",
@@ -321,12 +323,12 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "6c01b1a7-f957-4a47-979e-dbe1d5949aec",
+              "uuid": "b1d27144-f394-46bb-85a2-3314566aef07",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Update User Details",
-              "sourceStep": "/api/3/workflow_steps/28eb7c2b-4f21-4f04-9677-efec4440770f",
-              "targetStep": "/api/3/workflow_steps/eafc182f-4ee8-41ff-8f56-142d493ae077"
+              "sourceStep": "/api/3/workflow_steps/f37a5d8f-634f-4792-b350-dce7730b3b7d",
+              "targetStep": "/api/3/workflow_steps/8488bc8e-b3a8-4ee6-86b1-2d589df24533"
             }
           ]
         }
