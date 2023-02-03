@@ -215,7 +215,7 @@
     },
     {
       "operation": "list_of_users",
-      "description": "Retrieves a detailed list of users from the Commvault server based on filters like Alert ID",
+      "description": "Retrieves a detailed list of users from the Commvault server based on filters like Level.",
       "category": "investigation",
       "annotation": "list_of_users",
       "title": "Get Users List",
